@@ -137,3 +137,6 @@ persist.dsds.enabled=false
 ro.telephony.ril_class=HwHisiRIL
 audioril.lib=libhuawei-audio-ril.so
 persist.radio.apm_sim_not_pwdn=1
+
+# Storage
+ro.sys.sdcardfs=true
