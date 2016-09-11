@@ -93,6 +93,7 @@ TARGET_NO_RPC := true
 
 # NFC
 TARGET_USES_NQ_NFC := true
+BOARD_NFC_CHIPSET := pn548
 
 # Init
 TARGET_PROVIDES_INIT_RC := true
