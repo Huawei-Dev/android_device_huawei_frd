@@ -22,7 +22,45 @@ include $(BUILD_SHARED_LIBRARY)
 
 # Camera
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := huawei.c
+
+LOCAL_SRC_FILES:= \
+    camera/Camera.cpp \
+    camera/CameraMetadata.cpp \
+    camera/CaptureResult.cpp \
+    camera/CameraParameters2.cpp \
+    camera/ICamera.cpp \
+    camera/ICameraClient.cpp \
+    camera/ICameraService.cpp \
+    camera/ICameraServiceListener.cpp \
+    camera/ICameraServiceProxy.cpp \
+    camera/ICameraRecordingProxy.cpp \
+    camera/ICameraRecordingProxyListener.cpp \
+    camera/camera2/ICameraDeviceUser.cpp \
+    camera/camera2/ICameraDeviceCallbacks.cpp \
+    camera/camera2/CaptureRequest.cpp \
+    camera/camera2/OutputConfiguration.cpp \
+    camera/CameraBase.cpp \
+    camera/CameraUtils.cpp \
+    camera/VendorTagDescriptor.cpp \
+    camera/CameraParameters.cpp \
+    huawei.c
+
+LOCAL_SHARED_LIBRARIES := \
+    libcutils \
+    libutils \
+    liblog \
+    libbinder \
+    libhardware \
+    libui \
+    libgui \
+    libcamera_metadata
+
+LOCAL_C_INCLUDES += \
+    system/media/camera/include \
+    system/media/private/camera/include
+
 LOCAL_MODULE := libshim_camera
+
 LOCAL_MODULE_TAGS := optional
+
 include $(BUILD_SHARED_LIBRARY)
