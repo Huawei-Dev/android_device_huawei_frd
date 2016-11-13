@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+PowerGenie config file
+This xml file is blacklist for restrict gps
+-->
+<list>
+    <array type="gps_restrict_blacklist" version="1.0">
+        <!-- other series -->
+        <item>com.anjuke.android.app</item>
+        <item>com.ziroom.ziroomcustomer</item>
+        <item>com.zcbl.bjjj_driving</item>
+        <item>com.jiayuan</item>
+        <item>com.lphtsccft</item>
+        <item>cn.yangche51.app</item>
+        <item>cn.TuHu.android</item>
+        <item>cn.geekview.watch</item>
+        <item>com.yiche.autoeasy</item>
+        <item>com.deyi.client</item>
+        <item>com.paithink.ebus.apax</item>
+        <item>com.didapinche.booking</item>
+        <item>net.pchome.kds</item>
+        <item>com.zhimore.mama</item>
+        <item>cn.eclicks.wzsearch</item>
+        <item>cn.etouch.ecalendar</item>
+        <item>com.insdio.aqicn.airwidget.Asia</item>
+        <!-- travel  series -->
+        <item>com.Qunar</item>
+        <item>com.breadtrip</item>
+        <item>ctrip.android.view</item>
+        <item>com.tongcheng.android</item>
+        <item>com.dp.android.elong</item>
+        <item>com.tuniu.app.ui</item>
+        <item>com.taobao.trip</item>
+        <item>com.gtgj.view</item>
+        <item>com.MobileTicket</item>
+        <item>com.flightmanager.view</item>
+        <item>com.rytong.ceair</item>
+        <item>com.csair.mbp</item>
+        <!-- baidu  series -->
+        <item>com.baidu.netdisk</item>
+        <item>com.baidu.tieba</item>
+        <!-- tencent  series -->
+        <item>com.tencent.karaoke</item>
+        <item>com.qzone</item>
+        <!-- game  series -->
+        <item>com.tencent.qt.qtl</item>
+        <item>cc.thedream.qinsmoon.qihu</item>
+        <!-- reading  series -->
+        <item>com.netease.newsreader.activity</item>
+        <item>com.cubic.autohome</item>
+        <item>com.sohu.newsclient</item>
+        <item>com.shuqi.controller</item>
+        <item>com.tadu.android</item>
+        <item>cn.kuwo.tingshu</item>
+        <item>bubei.tingshu</item>
+        <!-- video  series -->
+        <item>com.qiyi.video</item>
+        <item>com.youku.phone</item>
+        <item>com.sohu.sohuvideo</item>
+        <item>com.letv.android.client</item>
+        <item>com.hunantv.imgo.activity</item>
+        <item>com.pplive.androidphone</item>
+        <item>air.tv.douyu.android</item>
+        <item>tv.pps.mobile</item>
+        <item>com.storm.smart</item>
+        <item>com.tudou.android</item>
+        <item>com.duowan.mobile</item>
+        <item>com.duowan.kiwi</item>
+        <!-- music  series -->
+        <item>com.changba</item>
+        <item>cn.kuwo.player</item>
+        <item>com.kugou.android</item>
+        <item>com.sds.android.ttpod</item>
+        <item>com.ximalaya.ting.android</item>
+        <item>com.netease.cloudmusic</item>
+        <item>com.duomi.android</item>
+        <item>fm.xiami.main</item>
+        <!-- camera&picture  series -->
+        <item>us.pinguo.idcamera</item>
+        <item>com.mt.mtxx.mtxx</item>
+        <item>com.meitu.meiyancamera</item>
+        <!-- shopping  series -->
+        <item>com.wochacha</item>
+        <item>com.taobao.taobao</item>
+        <item>com.eg.android.AlipayGphone</item>
+        <item>com.achievo.vipshop</item>
+        <item>com.sankuai.meituan</item>
+        <item>com.dianping.v1</item>
+        <item>com.nuomi</item>
+        <!-- browser  series -->
+        <!-- SNS chat series -->
+        <item>com.wuba</item>
+        <item>com.ganji.android</item>
+        <item>com.greenpoint.android.mc10086.activity</item>
+        <item>com.sinovatech.unicom.ui</item>
+        <item>com.ct.client</item>
+        <!-- bank  series -->
+        <item>cn.com.spdb.mobilebank.per</item>
+        <item>com.pingan.lifeinsurance</item>
+        <item>cmb.pb</item>
+        <item>com.icbc</item>
+        <item>com.spdbccc.app</item>
+    </array>
+</list>
+
+

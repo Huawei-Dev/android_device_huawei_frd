@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!--  * Copyright (C) 2015 Huawei Inc.
+ * the configuration is for power monitor.
+ * including log switches,scene current and battery node etc.
+   --> 
+<temprature_setting version="1">
+    <const>
+        <item name="ShellTempA" value="-0.24053"/>
+        <item name="ShellTempB" value="0.05372"/>
+        <item name="ShellTempC" value="5.53257"/>
+        <!-- unit: day -->
+        <item name="SaveLogDays" value="1"/>
+        <item name="SendTempLogDays" value="1"/>
+        <item name="SendTempAlarmLogDays" value="1"/>
+        <item name="NoSendLogDays" value="14"/>
+        <!-- unit: hour of day -->
+        <item name="StartNightHour" value="20"/>
+        <item name="EndNightHour" value="8"/>
+        <!-- unit: KB -->
+        <item name="MaxFileSizeMonth" value="300"/>
+        <!-- unit: KB -->
+        <item name="MaxFileSize" value="20"/>
+    </const>
+
+    <prop>
+        <!-- add log header: true/false -->
+        <item name="LogHeader" value="true"/>
+        <!-- enable sensor listener: true/false -->
+        <item name="LightSensor" value="false"/>
+        <!-- enable send logfile to APR: true/false , default: true-->
+        <item name="SendToAPR" value="true"/>
+    </prop>
+
+    <path>
+        <item name="cpu_freq" path="/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" />
+        <item name="littlecpu_freq" path="/sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq" />
+        <item name="gpu_freq" path="/sys/class/devfreq/gpufreq/cur_freq" />
+        <item name="ddr_freq" path="/sys/class/devfreq/ddrfreq/cur_freq" />
+        <item name="lcd_brightness" path="/sys/class/leds/lcd_backlight0/brightness" />
+        <item name="current_now" path="/sys/class/power_supply/Battery/current_now" />
+        <item name="voltage_now" path="/sys/class/power_supply/Battery/voltage_now" />
+        <item name="usb_charge" path="/sys/class/power_supply/USB/online" />
+        <item name="main_charge" path="/sys/class/power_supply/Mains/online" />
+        <item name="external_sdcard" path="/storage/sdcard1" />
+    </path>
+
+    <event>
+        <item name="battery_change" enable="true" />
+        <item name="screen_on" enable="true" />
+        <item name="screen_off" enable="true" />
+        <item name="power_connected" enable="true" />
+        <item name="power_disconnected" enable="true" />
+    </event>
+
+    <infocollect>
+        <!-- samplingrate unit: minute, thresholdtemp unit: centigrade, topappcount unit: number-->
+        <item name="temp" samplingrate="1"/>
+        <item name="tempalarm" samplingrate="1" thresholdtemp="42"/>
+        <item name="batsipper" samplingrate="1"  topappcount="10"/>
+        <item name="charge" samplingrate="10"  topappcount="10"/>
+    </infocollect>
+
+    <device>
+        <item name="AP" nodetype="system_h" enablecompute="true" absolutepath="/sys/class/thermal/thermal_zone3/temp" radio="1"/>
+        <item name="Charger" nodetype="charger" enablecompute="true"/>
+        <item name="Flash" nodetype="flash_led" enablecompute="true"/>
+        <item name="PA" nodetype="pa_0" enablecompute="true"/>
+        <item name="Battery" nodetype="Battery" enablecompute="false" radio="1000"/>
+        <item name="CPU" nodetype="cluster1" enablecompute="false"/>
+        <item name="GPU" nodetype="gpu"  enablecompute="false"/>
+    </device>
+
+    <NFF>
+        <item name="tempthreshold" value="45" /> 
+    </NFF>
+
+    <commercial>
+        <prop>
+            <!-- enable sensor listener: true/false  , default: false-->
+            <item name="LightSensor" value="false"/>
+            <!-- enable send logfile to APR: true/false , default: true-->
+            <item name="SendToAPR" value="false"/>
+        </prop>
+
+        <const>
+            <!-- unit: day -->
+            <item name="SendTempLogDays" value="1"/>
+            <!-- unit: KB -->
+            <item name="MaxFileSizeMonth" value="300"/>
+        </const>
+
+        <infocollect>
+            <!-- samplingrate unit: minute, thresholdtemp unit: centigrade, topappcount unit: number-->
+            <item name="temp" samplingrate="2"/>
+            <item name="tempalarm" samplingrate="2" thresholdtemp="42"/>
+            <item name="batsipper" samplingrate="2"  topappcount="5"/>
+            <item name="charge" samplingrate="10"  topappcount="5"/>
+        </infocollect>
+    </commercial>
+ </temprature_setting>
