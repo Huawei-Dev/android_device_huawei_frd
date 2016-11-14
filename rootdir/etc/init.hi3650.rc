@@ -57,6 +57,7 @@ on init
     mkdir /storage/usbotg 0700 root root
 
     symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
     chown media media /dev/maxim_smartpa_dev
     chmod 0660 /dev/maxim_smartpa_dev
