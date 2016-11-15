@@ -115,6 +115,9 @@ ro.config.usa_emergency_call=true
 ro.config.hw_channel_info=0,0,0,0
 ro.config.hw_nfc_on=true
 
+# Performance
+ro.am.reschedule_service=true
+
 # RIL
 persist.radio.modem.cap=8999D
 rild.libargs=-m modem0
