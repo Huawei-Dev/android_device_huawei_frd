@@ -863,6 +863,20 @@ on boot
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/msg_policy
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/msg_policy
 
+    write /sys/class/devfreq/ddrfreq/max_freq 1333000000
+    write /sys/class/devfreq/ddrfreq/min_freq 120000000
+    write /sys/class/devfreq/ddrfreq/polling_interval 50
+
+    write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 1333000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 120000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/polling_interval 50
+
+    write /sys/class/devfreq/gpufreq/max_freq 900000000
+    write /sys/class/devfreq/gpufreq/min_freq 120000000
+    write /sys/class/devfreq/gpufreq/polling_interval 50
+
+    write /proc/balong/stats/boot_time 1
+
 on property:vold.decrypt=trigger_reset_main
     class_reset main
     class_reset late_start
