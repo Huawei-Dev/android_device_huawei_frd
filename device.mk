@@ -182,6 +182,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     power.hi3650
 
+# LTE, CDMA, GSM/WCDMA
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.ril.config=simactivation
+
 # NFC
 #PRODUCT_PACKAGES += \
 #    libnfc-nci \
