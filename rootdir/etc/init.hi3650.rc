@@ -199,7 +199,7 @@ on early-fs
     start oeminfo_nvm
 
 on fs
-    export LD_SHIM_LIBS /system/lib64/libcutils.so|libshim_log.so:/system/lib/libcutils.so|libshim_log.so:/system/lib/libdmd.so|libshim_log.so:/system/lib64/libdmd.so|libshim_log.so:/system/vendor/lib64/egl/libGLES_mali.so|libshim_log.so:/system/lib64/libhwuibp.so|libshim_hwui.so:/system/lib/hw/gralloc.hi3650.so|libshim_gralloc.so:/system/lib64/hw/gralloc.hi3650.so|libshim_gralloc.so:/system/lib/libhwmediamonitorservice.so|libshim_log.so:/system/lib/hw/audio.primary.hi3650.so|libshim_audioroute.so:/system/lib/libgui.so|libshim_gui.so:/system/lib64/libgui.so|libshim_gui.so:/system/lib/libsurfaceflinger.so|libshim_surfaceflinger.so:/system/lib64/libsurfaceflinger.so|libshim_surfaceflinger.so
+    export LD_SHIM_LIBS /system/lib64/libcutils.so|libshim_log.so:/system/lib/libcutils.so|libshim_log.so:/system/lib/libdmd.so|libshim_log.so:/system/lib64/libdmd.so|libshim_log.so:/system/vendor/lib64/egl/libGLES_mali.so|libshim_log.so:/system/lib64/libhwuibp.so|libshim_hwui.so:/system/lib/hw/gralloc.hi3650.so|libshim_gralloc.so:/system/lib64/hw/gralloc.hi3650.so|libshim_gralloc.so:/system/lib/libhwmediamonitorservice.so|libshim_log.so:/system/lib/hw/audio.primary.hi3650.so|libshim_audioroute.so
 
     wait /dev/block/platform/hi_mci.0/by-name
     mount_all /fstab.hi3650
