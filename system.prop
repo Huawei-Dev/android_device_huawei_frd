@@ -93,6 +93,7 @@ ro.product.cucc.rtsplive=true
 ro.com.android.mobiledata=true
 
 ro.hardware.alter=Hisilicon Kirin 950
+persist.sys.fingersense=1
 
 # local
 ro.config.nfc_hasese=false
