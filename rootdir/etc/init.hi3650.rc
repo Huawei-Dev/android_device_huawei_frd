@@ -45,17 +45,6 @@ on init
     # NFC
     symlink /dev/pn544 /dev/pn54x
 
-    mkdir /mnt/shell 0700 shell shell
-    mkdir /mnt/shell/emulated 0700 shell shell
-
-    symlink /mnt/shell/emulated/0 /storage/emulated/0
-
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /storage/sdcard1 0700 root root
- 
-    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
-    mkdir /storage/usbotg 0700 root root
-
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
@@ -874,22 +863,15 @@ on boot
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/msg_policy
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/msg_policy
 
-on restart-sdcardfs
-    mkdir /data/media 0770 media_rw media_rw    
-    chown media_rw media_rw /data/media
-    mount sdcardfs /data/media /mnt/shell/emulated nosuid nodev derive=legacy,reserved_mb=20
-    
 on property:vold.decrypt=trigger_reset_main
     class_reset main
     class_reset late_start
     setprop vold.crypto_support_innersd 1
     
 on property:vold.decrypt=trigger_restart_min_framework
-    trigger restart-sdcardfs
     trigger start_main_class
     
 on property:vold.decrypt=trigger_restart_framework
-    trigger restart-sdcardfs
     trigger start_main_class
     trigger start_latestart_class
     trigger start_other_action
@@ -979,18 +961,6 @@ service tui-daemon /system/bin/tui_daemon
     class main
     group system
     socket tui_daemon stream 660 root system graphics
-
-service fuse_sdcard1rw /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard1 /storage/sdcard1
-   class late_start
-   disabled
-
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
-   class late_start
-   disabled
-
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1015 -d /mnt/media_rw/usbotg /storage/usbotg
-   class late_start
-   disabled
 
 service ril-daemon /system/bin/rild
     class late_start
