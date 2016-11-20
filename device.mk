@@ -178,6 +178,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=0 \
     persist.sys.root_access=1
 
+# HWC
+PRODUCT_PACKAGES += \
+    hwcomposer.hi3650
+
 # Power HAL
 PRODUCT_PACKAGES += \
     power.hi3650
