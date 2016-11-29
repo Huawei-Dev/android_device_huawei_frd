@@ -179,8 +179,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
 
 # HWC
-PRODUCT_PACKAGES += \
-    hwcomposer.hi3650
+#PRODUCT_PACKAGES += \
+#    hwcomposer.hi3650
 
 # Power HAL
 PRODUCT_PACKAGES += \
