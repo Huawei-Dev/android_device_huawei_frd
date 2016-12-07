@@ -190,6 +190,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril.config=simactivation
 
+# Sdcardfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
+
 # NFC
 #PRODUCT_PACKAGES += \
 #    libnfc-nci \
