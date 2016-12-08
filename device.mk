@@ -182,10 +182,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #PRODUCT_PACKAGES += \
 #    hwcomposer.hi3650
 
-# Power HAL
-PRODUCT_PACKAGES += \
-    power.hi3650
-
 # LTE, CDMA, GSM/WCDMA
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril.config=simactivation
