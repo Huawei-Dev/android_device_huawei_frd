@@ -175,6 +175,7 @@ on init
     chmod 0660 /sys/devices/virtual/graphics/fb0/vsync_event
     chown system system /sys/devices/virtual/graphics/fb0/mode
     chmod 0660 /sys/devices/virtual/graphics/fb0/mode
+    write /sys/devices/virtual/graphics/fb0/mode "U:1080x1920p-0"
 
     write /proc/sys/kernel/hung_task_panic 1
     write /proc/sys/kernel/hung_task_timeout_secs 120
