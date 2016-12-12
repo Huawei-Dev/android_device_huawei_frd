@@ -91,6 +91,9 @@ TARGET_USES_ION := true
 USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
 
+# NFC
+TARGET_USES_NQ_NFC := true
+
 # Init
 TARGET_PROVIDES_INIT_RC := true
 
