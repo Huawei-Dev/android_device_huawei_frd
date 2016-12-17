@@ -884,9 +884,13 @@ on property:vold.decrypt=trigger_reset_main
     setprop vold.crypto_support_innersd 1
     
 on property:vold.decrypt=trigger_restart_min_framework
+    # A/B update verifier that marks a successful boot.
+    exec - root cache -- /system/bin/update_verifier trigger_restart_min_framework
     trigger start_main_class
     
 on property:vold.decrypt=trigger_restart_framework
+    # A/B update verifier that marks a successful boot.
+    exec - root cache -- /system/bin/update_verifier trigger_restart_framework
     trigger start_main_class
     trigger start_latestart_class
     trigger start_other_action
@@ -909,6 +913,8 @@ on start_other_action
     start gpsdaemon
 
 on nonencrypted
+    # A/B update verifier that marks a successful boot.
+    exec - root cache -- /system/bin/update_verifier nonencrypted
     trigger start_latestart_class
     trigger data_ready
 
