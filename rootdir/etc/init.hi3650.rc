@@ -1186,7 +1186,7 @@ service atcmdserver /system/bin/atcmdserver
     class main
     disabled
 
-service oeminfo_nvm /sbin/oeminfo_nvm_server
+service oeminfo_nvm /system/bin/oeminfo_nvm_server
     class core
     critical
     ioprio rt 4
@@ -1204,7 +1204,7 @@ service data_cleanner /system/bin/data_cleaner
     class core
     oneshot
 
-service teecd /sbin/teecd
+service teecd /system/bin/teecd
     socket tee-multi-user stream 660 root system
     class core
     user root
