@@ -183,8 +183,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #    hwcomposer.hi3650
 
 # Power HAL
-PRODUCT_PACKAGES += \
-    power.hi3650
+#PRODUCT_PACKAGES += \
+#    power.hi3650
 
 # LTE, CDMA, GSM/WCDMA
 PRODUCT_PROPERTY_OVERRIDES += \
