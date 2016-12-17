@@ -983,7 +983,7 @@ service ril-daemon /system/bin/rild
     socket sap_uim_socket1 stream 660 bluetooth bluetooth    
     socket rild-debug stream 660 radio system
     user root
-    group radio cache inet misc audio sdcard_r sdcard_rw log system
+    group radio cache inet misc audio sdcard_r sdcard_rw log readproc system
     disabled
 
 service ril-daemon1 /system/bin/rild -c 1
@@ -1130,6 +1130,7 @@ service modemlogcat /system/bin/modemlogcat_lte -z -l
     group system
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks /dev/cpuctl/bg_non_interactive/tasks
 
 service modematserver /system/bin/modemlogcat_lte -f hidp
     class late_start
@@ -1137,6 +1138,7 @@ service modematserver /system/bin/modemlogcat_lte -f hidp
     group system
     disabled
     oneshot
+    writepid /dev/cpuset/system-background/tasks /dev/cpuctl/bg_non_interactive/tasks
 
 service dumptool /system/bin/dumptool
     class late_start
@@ -1159,7 +1161,9 @@ service limit_current /system/bin/limit_current -l
 service hwpged /system/bin/hwpged
     class main
     socket MsgHubSock stream 0660 root system
+    socket iawared seqpacket 0660 system system
     user root
+    group readproc
 
 service powerlogd /system/bin/powerlogd
     class core
@@ -1171,6 +1175,7 @@ service chargemonitor /system/bin/chargemonitor
     class late_start
     user root
     group system
+    writepid /dev/cpuset/system-background/tasks /dev/cpuctl/bg_non_interactive/tasks
 
 service bastetd /system/bin/bastetd
     class main
@@ -1208,7 +1213,7 @@ service teecd /system/bin/teecd
     socket tee-multi-user stream 660 root system
     class core
     user root
-    group root
+    group root readproc
 
 service cs-set /system/bin/cs-set
     user root
