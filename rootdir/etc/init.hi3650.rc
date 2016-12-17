@@ -45,7 +45,6 @@ on init
     # NFC
     symlink /dev/pn544 /dev/pn54x
 
-    symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
     chown media media /dev/maxim_smartpa_dev
