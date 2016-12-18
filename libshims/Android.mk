@@ -25,6 +25,7 @@ LOCAL_SRC_FILES := icu55.c
 LOCAL_SHARED_LIBRARIES := libicuuc libicui18n
 LOCAL_MODULE := libshim_icu
 LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_SHARED_LIBRARY)
 
 # Camera
@@ -50,6 +51,9 @@ LOCAL_SRC_FILES:= \
     camera/CameraUtils.cpp \
     camera/VendorTagDescriptor.cpp \
     camera/CameraParameters.cpp \
+    ui/GraphicBufferAllocator.cpp \
+    ui/GraphicBuffer.cpp \
+    ui/GraphicBufferMapper.cpp \
     huawei.c
 
 LOCAL_SHARED_LIBRARIES := \
@@ -60,6 +64,7 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware \
     libui \
     libgui \
+    libsync \
     libcamera_metadata
 
 LOCAL_C_INCLUDES += \
@@ -70,5 +75,7 @@ LOCAL_C_INCLUDES += \
 LOCAL_MODULE := libshim_camera
 
 LOCAL_MODULE_TAGS := optional
+
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
 include $(BUILD_SHARED_LIBRARY)
