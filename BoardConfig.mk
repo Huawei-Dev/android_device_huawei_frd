@@ -143,6 +143,8 @@ TARGET_RIL_VARIANT := proprietary
 # Enable WEBGL
 ENABLE_WEBGL := true
 
+USE_NINJA := false
+
 # Wifi
 TARGET_USES_64_BIT_BCMDHD	 := true
 BOARD_WLAN_DEVICE                := bcmdhd
