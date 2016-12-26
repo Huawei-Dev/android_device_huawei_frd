@@ -162,6 +162,10 @@ PRODUCT_PACKAGES += \
     init.rc \
     ueventd.hi3650.rc
 
+# SNAP Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # LIBShim
 PRODUCT_PACKAGES += \
     libshim_gralloc \
