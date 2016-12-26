@@ -56,6 +56,7 @@ LOCAL_SHARED_LIBRARIES := \
     libcamera_metadata
 
 LOCAL_C_INCLUDES += \
+    $(LOCAL_PATH)/camera/include \
     system/media/camera/include \
     system/media/private/camera/include
 
