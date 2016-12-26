@@ -14,34 +14,14 @@
  * limitations under the License.
  */
 
-int _ZN7android14CameraMetadata6unlockEPK15camera_metadata(void) {
-    return 0;
+int __hi_log_print(int i) {
+	return i;
 }
 
-int UCNV_FROM_U_CALLBACK_STOP_55(void) {
-    return 0;
+int exif_entry_gps_initialize(int i) {
+	return i;
 }
 
-int UCNV_TO_U_CALLBACK_STOP_55(void) {
-    return 0;
-}
-
-int ucnv_convertEx_55(void) {
-    return 0;
-}
-
-int ucnv_open_55(void) {
-    return 0;
-}
-
-int ucnv_close_55(void) {
-    return 0;
-}
-
-int ucnv_setFromUCallBack_55(void) {
-    return 0;
-}
-
-int ucnv_setToUCallBack_55(void) {
-    return 0;
+int atrace_async_begin_body_HwCam(int i) {
+	return i;
 }

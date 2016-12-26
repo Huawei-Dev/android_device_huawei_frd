@@ -172,8 +172,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # LIBShim
 PRODUCT_PACKAGES += \
-    libshim_gralloc \
-    libshim_huawei
+    libshim_camera \
+    libshim_gralloc
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.build.subproduct=F2FS \
