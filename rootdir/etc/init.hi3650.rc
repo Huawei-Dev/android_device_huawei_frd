@@ -1048,13 +1048,6 @@ service macaddr /system/bin/mac_addr_normalization
     group root bluetooth net_bt_stack wifi
     oneshot
 
-service wifi_wakeup_src /system/bin/wifiwakeupsrc
-    class core
-    user root
-    group root wifi
-    disabled
-    oneshot
-
 service p2p_supplicant /system/bin/wpa_supplicant -d \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
@@ -1084,11 +1077,6 @@ service modemlogcat_VIA /system/bin/modemlogcat_via -t /dev/ttySPI1 -c /system/e
     disabled
     oneshot
 
-service device-monitor /system/bin/device_monitor
-    class main
-    user root
-    group system
-
 service preparesdservice /system/bin/vdc volume storagetosd
    class main
    disabled
@@ -1096,33 +1084,6 @@ service preparesdservice /system/bin/vdc volume storagetosd
 
 on property:persist.sys.primarysd=*
    start preparesdservice
-
-service hiscoutmanager /system/bin/hiscoutmanager
-    class late_start
-    user root
-    group system
-    oneshot
-
-service hilogcat /system/bin/hilogcat -r16 -z 10 -n 5 -f /data/android_logs/hilogcat-log
-    class late_start
-    user root
-    group system
-    disabled
-	
-service iked /system/bin/iked
-    class late_start
-    user root
-    disabled
-    group system
-	
-on property:ro.vowifi.hw_vowifi=true
-    start iked
-	
-service logserver /system/bin/logserver
-    class late_start
-    user root
-    group system
-    oneshot
 
 service modemlogcat /system/bin/modemlogcat_lte -z -l
     class late_start
@@ -1140,9 +1101,6 @@ service modematserver /system/bin/modemlogcat_lte -f hidp
     oneshot
     writepid /dev/cpuset/system-background/tasks /dev/cpuctl/bg_non_interactive/tasks
 
-service dumptool /system/bin/dumptool
-    class late_start
-
 service hw_cdma_service /system/bin/hw_cdmamodem_service /dev/acm_cdma_log /dev/ttySPI3 /dev/ttySPI1
     class main
     user root
@@ -1157,25 +1115,6 @@ service limit_current /system/bin/limit_current -l
     user system
     group system
     disabled
-
-service hwpged /system/bin/hwpged
-    class main
-    socket MsgHubSock stream 0660 root system
-    socket iawared seqpacket 0660 system system
-    user root
-    group readproc
-
-service powerlogd /system/bin/powerlogd
-    class core
-    socket powerlogd stream 0600 system system
-    socket powerlogdr seqpacket 0600 system system
-    socket powerlogdw dgram 0220 system system
-
-service chargemonitor /system/bin/chargemonitor
-    class late_start
-    user root
-    group system
-    writepid /dev/cpuset/system-background/tasks /dev/cpuctl/bg_non_interactive/tasks
 
 service bastetd /system/bin/bastetd
     class main
@@ -1200,14 +1139,6 @@ service diagserver /system/bin/diagserver
     class main
     user root
     disabled
-
-service hwnffserver /system/bin/hwnffserver
-    class main
-    socket hwnff stream 0660 root mount
-
-service data_cleanner /system/bin/data_cleaner
-    class core
-    oneshot
 
 service teecd /system/bin/teecd
     socket tee-multi-user stream 660 root system

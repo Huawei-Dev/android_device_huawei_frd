@@ -39,17 +39,12 @@ PRODUCT_COPY_FILES += \
 
 # Misc
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/chargemonitor_config.xml:system/etc/chargemonitor_config.xml \
     $(LOCAL_PATH)/prebuilts/clatd.conf:system/etc/clatd.conf \
-    $(LOCAL_PATH)/prebuilts/device_monitor_for_nff.conf:system/etc/device_monitor_for_nff.conf \
-    $(LOCAL_PATH)/prebuilts/device_state_monitor.conf:system/etc/device_state_monitor.conf \
     $(LOCAL_PATH)/prebuilts/factory_modem.cfg:system/etc/factory_modem.cfg \
     $(LOCAL_PATH)/prebuilts/lhd.conf:system/etc/lhd.conf \
     $(LOCAL_PATH)/prebuilts/lhd_beta.conf:system/etc/lhd_beta.conf \
     $(LOCAL_PATH)/prebuilts/topazhp.cfg:system/etc/topazhp.cfg \
-    $(LOCAL_PATH)/prebuilts/vdec_atlas.cfg:system/etc/vdec_atlas.cfg \
-    $(LOCAL_PATH)/prebuilts/viacbp82d_log.bcfg:system/etc/viacbp82d_log.bcfg \
-    $(LOCAL_PATH)/prebuilts/viacbp82d_shutdown_log.bcfg:system/etc/viacbp82d_shutdown_log.bcfg
+    $(LOCAL_PATH)/prebuilts/vdec_atlas.cfg:system/etc/vdec_atlas.cfg
 
 # GPS
 PRODUCT_COPY_FILES += \
