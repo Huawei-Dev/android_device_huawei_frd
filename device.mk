@@ -131,7 +131,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/fingerprint.idc:system/usr/idc/fingerprint.idc
 
 PRODUCT_PACKAGES += \
-    fingerprint.kl \
+    fingerprint.kl
 
 # Gello
 PRODUCT_PACKAGES += \
